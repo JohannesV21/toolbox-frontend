@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Home from "./pages/Home";
-// import About from "./pages/About";
-// import Contact from "./pages/Contact";
-// import NotFound from "./pages/NotFound";
+import HomePage from "./home/HomePage";
+import { Nabvar } from "../components/navbar/Nabvar";
 
 function AppRoutes() {
   return (
     <Router>
+      <Nabvar />
+
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<HomePage />} />
         <Route path="*" element={<h1>Not found</h1>} />
       </Routes>
     </Router>
