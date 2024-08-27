@@ -10,9 +10,11 @@ export const getAllFiles = async () => {
   }
 };
 
-export const getFormattedDataFiles = async () => {
+export const getFormattedDataFiles = async (fileName = "test9.csv") => {
   try {
-    const response = await http.get(`${BACK_URL}/files/data`);
+    const response = await http.get(`${BACK_URL}/files/data`, {
+      params: { fileName },
+    });
     console.log("Formatted data: ", response);
     return response.data;
   } catch (error) {

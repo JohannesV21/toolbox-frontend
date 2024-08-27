@@ -1,44 +1,24 @@
-// import { useState } from "react";
-// import { getAllFiles } from "../../services/files/filesServices";
-
-// export const useGetUsers = () => {
-//   const [files, setFiles] = useState([]);
-//   const [isloading, setIsloading] = useState(false);
-
-//   const getFiles = async () => {
-//     try {
-//       setIsloading(true);
-//       const data = await getAllFiles();
-//       if (data) setFiles(data);
-//     } catch (error) {
-//       console.error(`useGetAllfiles: ${error}`);
-//     } finally {
-//       setIsloading(false);
-//     }
-//   };
-
-//   return { files, isloading };
-// };
-
 import { useState, useEffect } from "react";
 import { getAllFiles } from "../../services/files/filesServices";
 
 const useFiles = () => {
-  const [files, setFiles] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [listFiles, setListFiles] = useState([]);
+  const [listFilesLoading, setListFilesLoading] = useState(true);
+  const [listFilesError, setListFilesError] = useState(null);
 
   useEffect(() => {
     const fetchFiles = async () => {
       try {
         const data = await getAllFiles();
         if (data) {
-          setFiles(data);
+          setListFiles(data);
+          setListFilesLoading(false);
         } else {
-          setError("No se pudieron obtener los archivos");
+          setListFilesError("No se pudieron obtener los archivos");
+          setListFilesLoading(false);
         }
       } catch (err) {
-        setError(`Error al obtener archivos: ${err.message}`);
+        setListFilesError(`Error al obtener archivos: ${err.message}`);
       } finally {
         setLoading(false);
       }
@@ -47,7 +27,7 @@ const useFiles = () => {
     fetchFiles();
   }, []);
 
-  return { files, loading, error };
+  return { listFiles, listFilesLoading, listFilesError };
 };
 
 export default useFiles;
