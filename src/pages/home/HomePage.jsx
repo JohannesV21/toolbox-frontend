@@ -1,5 +1,5 @@
-import "../../styles/pages/home/home.scss";
-import { CustomSpinner } from "../../components/common/Spinner";
+import "./home.scss";
+import { CustomSpinner } from "../../components/common/Spinners/Spinner";
 import { Table } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
 import useFiles from "../../utils/hooks/useGetAllFiles";
