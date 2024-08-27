@@ -1,4 +1,4 @@
-import "../../styles/home/home.scss";
+import "../../styles/pages/home/home.scss";
 import { CustomSpinner } from "../../components/common/Spinner";
 import { Table } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
