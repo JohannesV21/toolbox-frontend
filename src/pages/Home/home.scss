@@ -1,0 +1,29 @@
+.home-container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 90%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  text-align: start;
+  line-height: 2;
+
+  section {
+    width: 100%;
+  }
+
+  .button-home {
+    margin: 0 auto;
+    padding: 1rem 3rem;
+    font-size: 1.6rem;
+    background-color: #9a2023;
+    border: #9a2023;
+
+    &:hover {
+      background-color: #9a2023;
+    }
+  }
+}

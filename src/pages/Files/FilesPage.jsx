@@ -1,11 +1,11 @@
-import "./home.scss";
+import "./files.scss";
 import { CustomSpinner } from "../../components/common/Spinners/Spinner";
 import { Table } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
 import useFiles from "../../utils/hooks/useGetAllFiles";
 import useFormattedDataFiles from "../../utils/hooks/useGetFormattedFiles";
 
-function HomePage() {
+function FilesPages() {
   const [searchTerm, setSearchTerm] = useState("");
   const { files, loading, error, isSearchFormat } =
     useFormattedDataFiles(searchTerm);
@@ -23,7 +23,7 @@ function HomePage() {
   }, [loading]);
 
   return (
-    <div className="home-container">
+    <div className="files-container">
       {/* Input de búsqueda */}
       <input
         type="text"
@@ -141,4 +141,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default FilesPages;
