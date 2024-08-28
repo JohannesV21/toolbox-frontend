@@ -32,7 +32,7 @@ const useFiles = () => {
       } catch (err) {
         setListFilesError(`Error al obtener archivos: ${err.message}`);
       } finally {
-        setLoading(false);
+        setListFilesLoading(false);
       }
     };
 
